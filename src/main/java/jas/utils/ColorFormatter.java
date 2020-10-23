@@ -1,7 +1,5 @@
 package jas.utils;
 
-import jui.JNode;
-
 /**
 * ColorFormatter class whose job is to color the String for the system outputs.
  */
@@ -11,7 +9,7 @@ public class ColorFormatter {
     }
 
     public static String color(String s, String modifier) {
-        if (JNode.OS.toLowerCase().contains("windows")) return s;
+        if (System.getProperty("os.name").startsWith("Windows")) return s;
         return (char) 27 + modifier + s + (char) 27 + "[0m";
     }
 
@@ -53,7 +51,7 @@ public class ColorFormatter {
      * @since May 16th
      */
     public static String coloredLine(String modifier, String line, String... symbols) {
-        if (JNode.OS.toLowerCase().contains("windows"))
+        if (System.getProperty("os.name").startsWith("Windows"))
             return line;
         for (String symbol : symbols) {
             line = line.replace(symbol, (char) 27 + modifier + symbol + (char) 27 + "[0m");

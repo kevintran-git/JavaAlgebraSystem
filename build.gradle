@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'org.openjfx.javafxplugin' version '0.0.8'
 }
 
 version '1.0'
@@ -9,13 +8,6 @@ repositories {
     mavenCentral()
 }
 
-javafx {
-    version = "14"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
-}
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'org.processing', name: 'core', version: '3.3.6'
-
 }
